@@ -50,7 +50,7 @@ jobs:
           name: .net-app
           
       - name: Login to Azure
-        uses: azure/actions/login@v1
+        uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E9C997DB0886473DBAE6CD90B79D68FA }}
