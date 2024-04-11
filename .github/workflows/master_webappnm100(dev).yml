@@ -43,17 +43,19 @@ jobs:
     permissions:
       id-token: write #This is required for requesting the JWT
     steps:
+      
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+      
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7002FD0EB7774F3F812ACBB28D1AD54D }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_11C1CA2471054060A6D980C2C3C2BBC6 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_52D4D0791B1B49D6ADDC1B9AEBDBA929 }}
-          
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_DEDEBF9A65E446B8AA287BC4C2B58BD0 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E772184BCA2145C38D23A23806BB5656 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1847F079F01347FFAA06B9AD0732DEB2 }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
